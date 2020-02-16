@@ -17,6 +17,17 @@
     {% block css %} {% endblock%}
   </head>
   <body>
+    <div id="flash">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </div>
     <header>
         {% include "header.html" %}
     </header>
@@ -36,5 +47,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     {% block js %} {% endblock%}
+
+   
   </body>
 </html>

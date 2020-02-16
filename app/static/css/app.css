@@ -1,3 +1,10 @@
 body {
     padding-top: 5rem;
 }
+.req
+{
+    color:red;
+}
+.box{
+    border-radius: 2px;
+}
